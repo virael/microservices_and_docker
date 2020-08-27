@@ -1,0 +1,12 @@
+version: '3'
+services:
+  student-app:
+    build: ./student-app
+    ports:
+      - "8080:8080"
+  student-app-client:
+    build: ./studentClient-app
+    ports:
+      - "8090:8090"
+    depends_on:
+      - student-app
