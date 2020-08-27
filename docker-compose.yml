@@ -4,9 +4,20 @@ services:
     build: ./student-app
     ports:
       - "8080:8080"
+    networks:
+      static-network:
+        ipv4_address: 172.20.128.2
   student-app-client:
-    build: ./studentClient-app
+    build: ./student-client-app
     ports:
       - "8090:8090"
+    networks:
+      static-network:
+        ipv4_address: 172.20.128.3
     depends_on:
       - student-app
+networks:
+  static-network:
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16
