@@ -4,7 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/microservices_and_docker.iml" filepath="$PROJECT_DIR$/.idea/microservices_and_docker.iml" />
       <module fileurl="file://$PROJECT_DIR$/student-app/student.iml" filepath="$PROJECT_DIR$/student-app/student.iml" />
-      <module fileurl="file://$PROJECT_DIR$/studentClient-app/studentClient.iml" filepath="$PROJECT_DIR$/studentClient-app/studentClient.iml" />
+      <module fileurl="file://$PROJECT_DIR$/studentClient-app/student-client.iml" filepath="$PROJECT_DIR$/studentClient-app/student-client.iml" />
     </modules>
   </component>
 </project>
