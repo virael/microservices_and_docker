@@ -1,6 +1,6 @@
-package com.ljanusz.studentClient.template;
+package com.ljanusz.studentclient.template;
 
-import com.ljanusz.studentClient.domain.Student;
+import com.ljanusz.studentclient.domain.Student;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;

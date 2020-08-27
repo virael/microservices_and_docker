@@ -1,4 +1,4 @@
-package com.ljanusz.studentClient.domain;
+package com.ljanusz.studentclient.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

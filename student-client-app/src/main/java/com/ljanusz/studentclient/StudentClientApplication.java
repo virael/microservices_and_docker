@@ -1,4 +1,4 @@
-package com.ljanusz.studentClient;
+package com.ljanusz.studentclient;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
