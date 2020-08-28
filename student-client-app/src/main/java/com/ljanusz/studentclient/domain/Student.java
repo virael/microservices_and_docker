@@ -5,8 +5,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
-@Getter
 @NoArgsConstructor
+@Getter
 public class Student {
 
     private Long id;
@@ -14,3 +14,4 @@ public class Student {
     private String name;
 
 }
+
