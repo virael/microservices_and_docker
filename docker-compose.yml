@@ -1,21 +1,17 @@
 version: '3'
 services:
   student-app:
+    container_name: "student"
     build: ./student-app
     ports:
       - "8080:8080"
-    networks:
-      static-network:
-        ipv4_address: 172.20.128.2
     depends_on:
       - database
   student-app-client:
+    container_name: "client"
     build: ./student-client-app
     ports:
       - "8090:8090"
-    networks:
-      static-network:
-        ipv4_address: 172.20.128.3
     depends_on:
       - student-app
   database:
@@ -26,14 +22,6 @@ services:
       MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: studentdb
       MYSQL_USER: user
-    networks:
-      static-network:
-        ipv4_address: 172.20.128.4
     ports:
       - "3306:3306"
     restart: always
-networks:
-  static-network:
-    ipam:
-      config:
-        - subnet: 172.20.0.0/16
