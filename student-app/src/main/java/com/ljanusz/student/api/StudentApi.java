@@ -1,35 +1,31 @@
 package com.ljanusz.student.api;
 
 import com.ljanusz.student.domain.Student;
+import com.ljanusz.student.repository.StudentRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @RestController
 public class StudentApi {
 
-    private final List<Student> studentList;
+    private final StudentRepository studentRepository;
 
-    public StudentApi() {
-        studentList = new ArrayList<>();
-        studentList.add(new Student(0L, "Adam"));
-        studentList.add(new Student(1L, "Ewa"));
-        studentList.add(new Student(2L, "Andrzej"));
-        studentList.add(new Student(3L, "Dawid"));
+    @Autowired
+    public StudentApi(StudentRepository studentRepository) {
+        this.studentRepository = studentRepository;
     }
 
     @GetMapping("/students")
-    public List<Student> getStudents() {
-        return studentList;
+    public Iterable<Student> getStudents() {
+        return studentRepository.findAll();
     }
 
     @PostMapping("/students")
     public void addStudent(@RequestBody Student student) {
-        studentList.add(student);
+        studentRepository.save(student);
     }
 
 }

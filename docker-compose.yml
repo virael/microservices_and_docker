@@ -7,6 +7,8 @@ services:
     networks:
       static-network:
         ipv4_address: 172.20.128.2
+    depends_on:
+      - database
   student-app-client:
     build: ./student-client-app
     ports:
@@ -24,8 +26,12 @@ services:
       MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: studentdb
       MYSQL_USER: user
+    networks:
+      static-network:
+        ipv4_address: 172.20.128.4
     ports:
       - "3306:3306"
+    restart: always
 networks:
   static-network:
     ipam:
